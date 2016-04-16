@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static "style/base.css" %}" />
+    <title>{% block title %}ProjectApp{% endblock %}</title>
+</head>
+<body>
+<div id="header">
+    {% block header %}
+        {% if user.username %}<p>User {{ user.username }}</p>
+        {% else %}<p><a href="/login/">Sign in</a></p>{% endif %}
+        <h1>Home Page</h1>
+    {% endblock %}
+</div>
+<div id="sidebar">
+    {% block sidebar %}
+    <ul><li><a href= "{% url 'TutubeApp:canal-list' %}">Canal</a></li></ul>
+    <ul><li><a href= "{% url 'TutubeApp:author-list' %}">Author</a></li></ul>
+    <ul><li><a href= "{% url 'TutubeApp:video-list' %}">Video</a></li></ul>
+    {% endblock %}
+</div>
+<div id="content">
+    {% block content %}
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    {% endblock %}
+</div>
+<div id="footer">{% block footer %}{% endblock %}</d accesskey=""iv>
+</body>
+</html>

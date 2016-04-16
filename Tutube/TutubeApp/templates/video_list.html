@@ -1,0 +1,15 @@
+{% extends "home_page.html" %}
+
+{% block content %}
+    <h2>Videos</h2>
+    <ul>
+        {% for video in video_list %}
+        <li> Id Video: {{ video.id}}</li>
+        <li> Nom Video: {{ video.titol_video }}</li>
+        <li> URL Video: {{ video.url_video }}</li>
+        <li> Data Pujada Video: {{ video.data_up }}</li>
+        <br/>
+        <br/>
+        {% endfor %}
+    </ul>
+{% endblock %}

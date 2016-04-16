@@ -1,0 +1,15 @@
+{% extends "home_page.html" %}
+
+{% block content %}
+    <h2>Canals</h2>
+    <ul>
+        {% for canal in canal_list %}
+          <li> Id Canal: {{ canal.id}}</li>
+          <li> Nom Canal: {{ canal.nom_canal }}</li>
+          <li> URL Canal: {{ canal.URL_canal }}</li>
+          <li> Data Creació Canal: {{ canal.data_crea }}</li>
+          <br/>
+          <br/>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "home_page.html" %}
+
+{% block content %}
+    <h2>Authors</h2>
+    <ul>
+        {% for author in author_list %}
+          <li> Id Autor: {{ author.id }}</li>
+          <li> Nom Autor: {{ author.nom_autor }}</li>
+          <li> Edat Autor: {{ author.edat_autor }}</li>
+          <br/>
+          <br/>
+        {% endfor %}
+    </ul>
+{% endblock %}
